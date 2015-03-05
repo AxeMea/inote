@@ -1,0 +1,13 @@
+/*阅读模式*/
+body{font-family: 微软雅黑;font-size: 13px;color: #2F2F2F}
+.day{background: white}
+.night{}
+
+/*top*/
+header{background: #2F2F2F;padding: 10px;color: white;font: 13px}
+header nav li{display: inline-block;margin-right: 10px;}
+
+/*文章主体*/
+.content-wrapper{padding: 25px;}
+.content-wrapper .title{font-size: 50px;font-weight: 700;margin-bottom: 25px;}
+.content-wrapper .content{font-size: 17px;color: #2f2f2f;font-weight:100;line-height: 30px;text-indent: 35px;}
