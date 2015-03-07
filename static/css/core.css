@@ -1,13 +1,64 @@
+/*helper*/
+.pull-right{float: right}
+.pull-left{float: left}
+
+.text-left{text-align: left}
+.text-center{text-align: center;}
+.text-right{text-align: right}
+
+/*画笔*/
+.pencil{display: inline-block;width: 40px;height: 40px;}
+.tool-active{border: 5px black dotted}
+.pencil:hover{opacity: 0.7}
+.pencil-red{background: red}
+.pencil-yellow{background: yellow}
+.pencil-green{background: green}
+.pencil-orange{background: orange}
+.pencil-blue{background: blue}
+.pencil-silver{background: silver}
+.pencil-empty{background: gray}
+
+
+/*画笔标签*/
+.mark{padding: 2px;color: black;cursor: pointer;}
+.mark:hover{border:3px orange solid;border-style: solid none solid none}
+.mark.mark-red{background: red;color: white}
+.mark.mark-yellow{background: yellow;color: white}
+.mark.mark-green{background: green;color: white}
+.mark.mark-orange{background: orange}
+.mark.mark-blue{background: blue}
+.mark.mark-silver{background: silver}
+.mark.mark-empty{background: gray;color: white}
+.mark.mark-focus{border:3px orange solid;border-style: solid none solid none}
+
+/*标签*/
+.tag{line-height: 35px;}
+
 /*阅读模式*/
-body{font-family: 微软雅黑;font-size: 13px;color: #2F2F2F}
+body{font-family: 微软雅黑;font-size: 13px;color: #2F2F2F;margin: 0px;}
 .day{background: white}
 .night{}
 
 /*top*/
-header{background: #2F2F2F;padding: 10px;color: white;font: 13px}
-header nav li{display: inline-block;margin-right: 10px;}
+header{background: #2F2F2F;color: white;font: 13px;padding: 15px 15px 15px 90px}
+header nav{display: inline-block;margin-left: -10px}
+header li{display: inline-block;margin-right: 10px;}
+header .user-op{margin-right: 60px}
 
 /*文章主体*/
-.content-wrapper{padding: 25px;}
-.content-wrapper .title{font-size: 50px;font-weight: 700;margin-bottom: 25px;}
-.content-wrapper .content{font-size: 17px;color: #2f2f2f;font-weight:100;line-height: 30px;text-indent: 35px;}
+.content-wrapper{padding: 25px 200px 90px 200px;}
+.content-wrapper .title{font-size: 50px;font-weight: 700;margin:0px 0px 25px 0px;}
+.content-wrapper .content{font-size: 17px;color: #2f2f2f;font-weight:100;text-indent: 35px;}
+ 
+
+ /*工具栏*/
+ .tool-bar{position: fixed;bottom: 0px;left: 0px;padding: 15px 0px 15px 0px;background: rgba(0,0,0,0.7);width: 100%;text-align: center;}
+ .tool-bar li{display: inline-block;margin-right: 25px;cursor: pointer;}
+
+ @media(max-width: 500px){
+ 	.content-wrapper{padding: 20px;}
+ }
+
+ /*笔记层*/
+ .note-dlg{position: absolute;width: 170px;right: 400px;top: 0px;background: gray;color: black;display: none}
+ .note-dlg  textarea.note{width: 95%;}
