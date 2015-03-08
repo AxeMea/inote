@@ -6,30 +6,36 @@
 .text-center{text-align: center;}
 .text-right{text-align: right}
 
+
+/*按钮样式*/
+.btn{cursor:pointer;background: none;border: 0px;padding: 5px 15px 5px 15px;color: white;border-radius:3px}
+.btn:hover{opacity: 0.8}
+.btn-save{background: #049CDB;}
+.btn-cancel{background: #EE5F5B}
+
+
 /*画笔*/
 .pencil{display: inline-block;width: 40px;height: 40px;}
-.tool-active{border: 5px black dotted}
-.pencil:hover{opacity: 0.7}
+.tool-active{border: 2px yellow solid}
 .pencil-red{background: red}
 .pencil-yellow{background: yellow}
 .pencil-green{background: green}
 .pencil-orange{background: orange}
 .pencil-blue{background: blue}
 .pencil-silver{background: silver}
-.pencil-empty{background: gray}
+.pencil-empty{}
 
 
 /*画笔标签*/
 .mark{padding: 2px;color: black;cursor: pointer;}
-.mark:hover{border:3px orange solid;border-style: solid none solid none}
-.mark.mark-red{background: red;color: white}
-.mark.mark-yellow{background: yellow;color: white}
-.mark.mark-green{background: green;color: white}
-.mark.mark-orange{background: orange}
-.mark.mark-blue{background: blue}
-.mark.mark-silver{background: silver}
-.mark.mark-empty{background: gray;color: white}
-.mark.mark-focus{border:3px orange solid;border-style: solid none solid none}
+.mark-1{background: #FF9999;}
+.mark-2{background: #CC9966;}
+.mark-3{background: #FFCC99;}
+.mark-4{background: #FF6633}
+.mark-5{background: #FF99CC}
+.mark-6{background: #CCCCFF}
+.mark-empty{background: gray;}
+.mark:hover,.mark-focus{border:3px orange solid;border-style: none none solid none}
 
 /*标签*/
 .tag{line-height: 35px;}
@@ -40,25 +46,59 @@ body{font-family: 微软雅黑;font-size: 13px;color: #2F2F2F;margin: 0px;}
 .night{}
 
 /*top*/
-header{background: #2F2F2F;color: white;font: 13px;padding: 15px 15px 15px 90px}
-header nav{display: inline-block;margin-left: -10px}
+header{background: #2F2F2F;color: white;font: 13px;padding: 15px}
+header .header-center{}
+header nav{display: inline-block;}
 header li{display: inline-block;margin-right: 10px;}
-header .user-op{margin-right: 60px}
+header .user-op{}
 
 /*文章主体*/
-.content-wrapper{padding: 25px 200px 90px 200px;}
+.content-wrapper{}
+.content-wrapper article{margin: 25px auto}
 .content-wrapper .title{font-size: 50px;font-weight: 700;margin:0px 0px 25px 0px;}
 .content-wrapper .content{font-size: 17px;color: #2f2f2f;font-weight:100;text-indent: 35px;}
  
 
  /*工具栏*/
- .tool-bar{position: fixed;bottom: 0px;left: 0px;padding: 15px 0px 15px 0px;background: rgba(0,0,0,0.7);width: 100%;text-align: center;}
- .tool-bar li{display: inline-block;margin-right: 25px;cursor: pointer;}
+.tool-bar{position: fixed;bottom: 0px;left: 0px;padding: 10px 0px 10px 0px;background: rgba(0,0,0,0.7);width: 100%;text-align: center;color: white}
+.tool-bar li{display: inline-block;margin-right: 25px;cursor: pointer;vertical-align: middle;line-height: 15px;}
+.tool-bar li:hover{opacity: 0.7;}
+.tool-bar img{width: 40px;}
 
- @media(max-width: 500px){
- 	.content-wrapper{padding: 20px;}
- }
+/*遮罩*/
+.mask{width: 100%;height: 100%;background: rgba(0,0,0,0.7);position: fixed;left: 0px;top: 0px;cursor: pointer;z-index: 1;display: none}
+
+/*窗口*/
+.window{width: 100%;position: fixed;left: 0px;top: 0px;z-index: 2;margin-top: 50px;display: none}
+.window .window-center{background: #F0EED6;border-radius: 3px;padding: 15px 15px 0px 15px;}
 
  /*笔记层*/
  .note-dlg{position: absolute;width: 170px;right: 400px;top: 0px;background: gray;color: black;display: none}
  .note-dlg  textarea.note{width: 95%;}
+
+/*.note-mask .screen-center{height: 100%}*/
+#note-window{}
+#note-window aside{line-height: 20px;background: #dddddd;padding: 15px;}
+#note-window aside .scroll-box{max-height: 55px;overflow: auto}
+#note-window .note{width: 97%;line-height: 17px;padding: 0px 10px 0px 10px}
+#note-window h2{margin: 15px 0px;font-size: 20px;}
+#note-window dd{padding-bottom: 15px;}
+#note-window dd input{vertical-align: -2px}
+
+
+/*打开笔记*/
+#openNote{border-left: 1px #dddddd solid;padding-left: 20px;}
+
+
+ /*屏幕大小*/
+.screen-center{margin: 0px auto}
+.screen .screen-center{width: 960px;}
+
+ @media(max-width: 400px){
+ 	.screen .screen-center{width: 100%;}
+
+ 	#note-window{margin-top: 0px}
+ 	#note-window,#note-window .screen-center,#note-window .window-center{height: 100%}
+
+
+ }

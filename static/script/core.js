@@ -4,10 +4,11 @@ $(function(){
 	iNote = {
 		setting:{
 			page:'.content',
-			mark:'mark-red',
-			oldMark:'mark-red',
+			mark:'mark-1',
+			oldMark:'mark-1',
 			tools:'.tool-bar',
-			noteDlg:'note-dlg',
+			noteDlg:'.note-dlg',
+			noteWindow:'#note-window'
 		},
 
 		init:function(){
@@ -17,6 +18,8 @@ $(function(){
 		},
 
 		_currentTag:'',
+
+		_lastClickTime:Date.parse(new Date()),
 
 		_setFocus:function(tag){
 			$('.mark-focus').removeClass('mark-focus');
@@ -42,12 +45,7 @@ $(function(){
 		},
 
 		_removeAllMarkStyle:function(tag){
-			var i = 0,
-				pencils = $(this.setting.tools).find('span');
-
-			for(i = 0 ; i < pencils.length;i++){
-				tag.removeClass($(pencils[i]).attr('data-pclass'));
-			}
+				tag.removeClass(tag.attr('data-pclass'));
 		},
 
 		_changeMark:function(tag){
@@ -55,7 +53,7 @@ $(function(){
 			this._removeAllMarkStyle(tag);
 			tag.addClass(this.setting.mark);
 			tag.attr('data-pclass',this.setting.mark);
-			this._currentTag = '';
+			this._currentTag = null;
 		},
 
 		_isMark:function(tag){
@@ -93,13 +91,15 @@ $(function(){
 
 					uid = me._generateGUID();
 
-					html = '<span " id="' + uid + ' data-pclass="' +  me.setting.mark + '" class="tag ' + 'mark ' + me.setting.mark + '" id="' + uid + '">' + text + '</span>';
+					html = '<span id="' + uid + '" data-pclass="' +  me.setting.mark + '" class="tag ' + 'mark ' + me.setting.mark + '" id="' + uid + '">' + text + '</span>';
 
 					if(textAfter)
 						   html += '<span class="tag">' + textAfter + '</span>';
 
 					tag.get(0).outerHTML = html;
 					// me._setFocus($('#' + uid));
+
+					me._postData($('#' + uid).closest('.p'));
 			}
 
 
@@ -124,7 +124,10 @@ $(function(){
 
 				// me._currentTag = $('#' + uid);
 				// me._setFocus($('#' + uid));
+				me._postData($('#' + uid).closest('.p'));
 			}
+
+			me._currentTag = null;
 		},
 
 		_clearMark:function(tag){
@@ -149,13 +152,16 @@ $(function(){
 			}
 
 			tag.text(prevTxt + tag.text() + nextTxt);
+			this._removeAllMarkStyle(tag);
 			tag.removeAttr('id');
 			tag.removeAttr('data-pclass');
-			this._removeAllMarkStyle(tag);
+			
 
 
 			this._setTool(this.setting.oldMark);
 			this._clearFocus(tag);
+
+			me._postData(tag.closest('.p'));
 		},
 
 		_setTool:function(tag){
@@ -197,6 +203,105 @@ $(function(){
 			$('.note-dlg').hide();
 		},
 
+		_showNoteWindow:function(tag){
+
+			if(tag){
+				var win = $(this.setting.noteWindow);
+
+				win.find('.summary').text(tag.text());
+				win.find('.note').val(tag.attr('data-note'));
+				$('body').css('overflow','hidden');
+				$('.mask').show();
+				win.fadeIn();
+			}else{
+				alert('请先选中笔记');
+			}
+			
+		},
+
+		_hideNoteWindow:function(){
+			$(this.setting.noteWindow).fadeOut();
+			$('.mask').hide();
+			$('body').css('overflow-y','auto');
+		},
+
+		_postData:function(p){
+			var tagsData = [],
+				json = {
+					pIndex:p.attr('data-index'),
+					tags:tagsData
+				};
+
+			var tags = p.find('.tag'),
+				len = tags.length,
+				i = 0,
+				index = 0,
+				obj;
+
+			for(i = 0 ; i < len;i++){
+
+				var tag = $(tags[i]);
+
+				if(tag.hasClass('mark')){
+
+					obj = {
+						startIndex:index,
+						endIndex:index + tag.text().length,
+						mark:tag.attr('data-pclass'),
+						text:tag.text(),
+						note:tag.attr('data-note') || '',
+						id:tag.attr('id')
+					};
+
+					tagsData.push(obj);
+				}
+
+				index += tag.text().length;
+			}
+
+			if(json.tags.length){
+				console.log('post:' + JSON.stringify(json));
+				return JSON.stringify(json);
+			}
+		},
+
+		_paragraphProducer:function(json){
+			var obj = JSON.parse(json),
+				index = 0,
+				i,html = '',
+				len = obj.tags.length,
+				oLen = 0,
+				text = '';
+
+
+			var p = $('.p[data-index=' + obj.pIndex + ']'),
+				originText = p.text();
+
+			var i = 0;
+
+
+			for(i = 0; i < obj.tags.length;i++){
+
+				// 截取非笔记字段
+				if(index != obj.tags[i].startIndex){
+					prevText = originText.substring(index,obj.tags[i].startIndex);
+					index = obj.tags[i].startIndex;
+					html += '<span class="tag">' + prevText + '</span>'; 
+				}
+				
+				text = originText.substring(index,obj.tags[i].endIndex);
+				index = obj.tags[i].endIndex;
+				html += '<span data-note="' + obj.tags[i].note + '"  data-pclass="' + obj.tags[i].mark + '" id="' + obj.tags[i].id + '" class="tag mark ' + obj.tags[i].mark + '">' + text + '</span>'
+			}
+
+			// 结尾
+			if(index != originText.length){
+				html += '<span class="tag">' + originText.substring(index,originText.length) + '</span>'; 
+			}
+
+			$('.p[data-index=' + obj.pIndex + ']').html(html);
+		},
+
 		_bind:function(){
 			var $page = $(this.setting.page),
 				me = this;
@@ -208,14 +313,32 @@ $(function(){
 			});
 
 			// 保存笔记
-			$('#saveNoteBtn').on('click',function(){
+			$('#noteSaveBtn').on('click',function(){
 				if(me._currentTag){
-					me._currentTag.attr('data-note',$('.note-dlg .note').val());
+					me._currentTag.attr('data-note',$(me.setting.noteWindow + ' .note').val());
+					// var obj = me._postData(me._currentTag.closest('.p'));
+					// me._paragraphProducer(obj);
+					me._hideNoteWindow();
+					$(me.setting.noteWindow).find('form').get(0).reset();
 				}
 			});
 
+			// 保存笔记
+			$('#noteCancelBtn').on('click',function(){
+				me._hideNoteWindow();
+			});
 
-			// 点击tag
+			// 点击打开笔记
+			$('#openNote').on('click',function(){
+				 me._showNoteWindow(me._currentTag);
+			});
+
+			// 点击遮罩
+			$('.mask').on('click',function(){
+				me._hideNoteWindow();
+			});
+
+			// 单机tag
 			$(document).on('click','.tag',function(event){
 				console.log(me.getSelect().obj);
 
@@ -232,13 +355,19 @@ $(function(){
 				if(me._isMark(me._currentTag)){
 					me._setTool(me._currentTag.attr('data-pclass'));
 					me._setFocus(me._currentTag);
-					me._showNoteDlg(me._currentTag,event.pageX,event.pageY);
+					return;
 				}
 				else
 					me._setTool(me.setting.mark);
 
+				// var timestamp = Date.parse(new Date());
+				// if(timestamp - me._lastClickTime <= 1000)
+				// 	return;
+				// me._lastClickTime = timestamp;
+
 				me._setMark(me._currentTag);
 				
+
 				
 			});
 
