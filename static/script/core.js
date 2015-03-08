@@ -392,7 +392,7 @@ $(function(){
 				}
 
 				if(me.setting.mark != 'mark-empty')
-					me.setting.oldMark = 'mark-red';
+					me.setting.oldMark = 'mark-1';
 
 			});
 
