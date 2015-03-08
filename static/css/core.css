@@ -6,6 +6,10 @@
 .text-center{text-align: center;}
 .text-right{text-align: right}
 
+/*链接*/
+a{text-decoration: none;color:black;}
+a:hover{color: orange}
+
 
 /*按钮样式*/
 .btn{cursor:pointer;background: none;border: 0px;padding: 5px 15px 5px 15px;color: white;border-radius:3px}
@@ -45,9 +49,33 @@ body{font-family: 微软雅黑;font-size: 13px;color: #2F2F2F;margin: 0px;}
 .day{background: white}
 .night{}
 
+/*框架*/
+.frame-main{float: left;width: 700px;margin-top: 10px;}
+.frame-side{float: right;width: 245px;margin-top: 10px;}
+
+/*媒体头像*/
+.media-logo{height: 25px;}
+
+/*栏目头部*/
+.column-header{padding: 10px;font-size: 25px}
+
+/*文章列表*/
+.article-list{}
+.article-list a{color: #3377AA}
+.article-list li{float: left;padding: 10px 0px 10px 0px;border-bottom:1px #dddddd solid;margin-bottom: 10px}
+.article-list aside{line-height: 17px;text-align: center;width: 130px;}
+.article-list aside img{width: 85px;}
+.article-list .info{width: 550px;padding-left: 20px;font-size: 12px;position: relative;}
+.article-list .info p{padding: 5px 0px}
+.article-list .info .title{font-size: 14px}
+.article-list .info .summary{line-height: 18px;padding-top: 4px;}
+.article-list .info .time{color: #BBBBBB}
+.article-list .info .media-logo{position: absolute;right: 0px;bottom: 0px;}
+
+
 /*top*/
 header{background: #2F2F2F;color: white;font: 13px;padding: 15px}
-header .header-center{}
+header a{color: white}
 header nav{display: inline-block;}
 header li{display: inline-block;margin-right: 10px;}
 header .user-op{}
@@ -55,7 +83,7 @@ header .user-op{}
 /*文章主体*/
 .content-wrapper{}
 .content-wrapper article{margin: 25px auto}
-.content-wrapper .title{font-size: 50px;font-weight: 700;margin:0px 0px 25px 0px;}
+.content-wrapper article .title{font-size: 50px;font-weight: 700;margin:0px 0px 25px 0px;}
 .content-wrapper .content{font-size: 17px;color: #2f2f2f;font-weight:100;text-indent: 35px;}
  
 
@@ -89,16 +117,25 @@ header .user-op{}
 /*打开笔记*/
 #openNote{border-left: 1px #dddddd solid;padding-left: 20px;}
 
+/*分类列表*/
+#categorys li{display: inline-block;margin-right: 20px;padding: 5px;padding: 6px;}
+#categorys .cate-wrapper{padding: 10px;background: #dddddd;border-radius: 3px;}
+#categorys .main-cate{margin:5px 0px 5px 0px;}
+#categorys .main-cate li{background: #E78170;border-radius: 8px;color: white}
+
 
  /*屏幕大小*/
 .screen-center{margin: 0px auto}
 .screen .screen-center{width: 960px;}
+
+/*side的图片*/
+.side-banner{width: 100%;height:100px;}
+
 
  @media(max-width: 400px){
  	.screen .screen-center{width: 100%;}
 
  	#note-window{margin-top: 0px}
  	#note-window,#note-window .screen-center,#note-window .window-center{height: 100%}
-
 
  }
