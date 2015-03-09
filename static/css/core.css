@@ -7,9 +7,18 @@
 .text-right{text-align: right}
 
 /*链接*/
-a{text-decoration: none;color:black;}
+a{text-decoration: none;color: rgb(45, 99, 169)}
 a:hover{color: orange}
 
+/*头像*/
+.avatar{width: 50px;height: 50px;}
+
+/*tab*/
+.tab li{display: inline-block;margin: 10px 20px 0px 20px;padding-bottom: 15px;}
+.tab li:hover{border-bottom: 1px orange solid}
+
+/*国家颜色*/
+.country-china{color: red}
 
 /*按钮样式*/
 .btn{cursor:pointer;background: none;border: 0px;padding: 5px 15px 5px 15px;color: white;border-radius:3px}
@@ -28,6 +37,10 @@ a:hover{color: orange}
 .pencil-blue{background: blue}
 .pencil-silver{background: silver}
 .pencil-empty{}
+
+
+/*字体颜色*/
+.font-note{font-size: 12px;color: rgb(115, 115, 115)}
 
 
 /*画笔标签*/
@@ -51,18 +64,18 @@ body{font-family: 微软雅黑;font-size: 13px;color: #2F2F2F;margin: 0px;}
 
 /*框架*/
 .frame-main{float: left;width: 700px;margin-top: 10px;}
-.frame-side{float: right;width: 245px;margin-top: 10px;}
+.frame-side{float: right;width: 280px;margin-top: 10px;}
 
 /*媒体头像*/
 .media-logo{height: 25px;}
 
 /*栏目头部*/
-.column-header{padding: 10px;font-size: 25px}
+.column-header{padding: 10px;font-size: 25px;clear: both}
 
 /*文章列表*/
 .article-list{}
 .article-list a{color: #3377AA}
-.article-list li{float: left;padding: 10px 0px 10px 0px;border-bottom:1px #dddddd solid;margin-bottom: 10px}
+.article-list li{float: left;padding: 10px 0px 10px 0px;border-bottom:1px #efefef solid;margin-bottom: 10px}
 .article-list aside{line-height: 17px;text-align: center;width: 130px;}
 .article-list aside img{width: 85px;}
 .article-list .info{width: 550px;padding-left: 20px;font-size: 12px;position: relative;}
@@ -72,6 +85,13 @@ body{font-family: 微软雅黑;font-size: 13px;color: #2F2F2F;margin: 0px;}
 .article-list .info .time{color: #BBBBBB}
 .article-list .info .media-logo{position: absolute;right: 0px;bottom: 0px;}
 
+
+/*我的上传文章*/
+#upload-list li{line-height: 25px;padding: 0px 10px 10px 18px;margin-bottom:10px;border-bottom: 1px #dddddd solid;position: relative;}
+#upload-list li .title{font-size: 15px;}
+#upload-list span,#upload-list .op a{margin-right: 10px;}
+#upload-list .op{position: absolute;right: 0px;top: 10px;display: none}
+#upload-list li:hover .op{display: block}
 
 /*top*/
 header{background: #2F2F2F;color: white;font: 13px;padding: 15px}
@@ -106,7 +126,7 @@ header .user-op{}
 
 /*.note-mask .screen-center{height: 100%}*/
 #note-window{}
-#note-window aside{line-height: 20px;background: #dddddd;padding: 15px;}
+#note-window aside{line-height: 20px;background: #efefef;padding: 15px;}
 #note-window aside .scroll-box{max-height: 55px;overflow: auto}
 #note-window .note{width: 97%;line-height: 17px;padding: 0px 10px 0px 10px}
 #note-window h2{margin: 15px 0px;font-size: 20px;}
@@ -115,13 +135,15 @@ header .user-op{}
 
 
 /*打开笔记*/
-#openNote{border-left: 1px #dddddd solid;padding-left: 20px;}
+#openNote{border-left: 1px #efefef solid;padding-left: 20px;}
 
 /*分类列表*/
 #categorys li{display: inline-block;margin-right: 20px;padding: 5px;padding: 6px;}
-#categorys .cate-wrapper{padding: 10px;background: #dddddd;border-radius: 3px;}
+#categorys .cate-wrapper{padding: 10px;background: #efefef;border-radius: 3px;}
+#categorys .cate-wrapper li{cursor: pointer;}
+#categorys .cate-wrapper li:hover{color: #E78170}
 #categorys .main-cate{margin:5px 0px 5px 0px;}
-#categorys .main-cate li{background: #E78170;border-radius: 8px;color: white}
+#categorys .main-cate li{background: #E78170;border-radius: 8px;color: white;}
 
 
  /*屏幕大小*/
@@ -131,11 +153,32 @@ header .user-op{}
 /*side的图片*/
 .side-banner{width: 100%;height:100px;}
 
+/*用户信息*/
+#userInfo{padding: 10px;background: #efefef;float: left}
+#userInfo aside{float: left;text-align: center;width: 100px;padding-top: 18px}
+#userInfo .user-detail{float: left;width: 570px;}
+#userInfo li{padding: 14px 0px;}
+#userInfo span{margin: 0px 6px 0px 6px}
+#userInfo .country{margin-left: 0px;}
+#userInfo .name{color: rgb(229, 111, 38);font-size: 25px}
+#userInfo .sex-male{color: gray;font-size: 18px;}
+#userInfo .sex-female{color: orange;font-size: 18px;}
+#userInfo .font-note{line-height: 18px}
+#userInfo .join-time{color: rgb(166, 140, 140);font-size: 14px;}
+
+#my-list{}
+
 
  @media(max-width: 400px){
- 	.screen .screen-center{width: 100%;}
-
  	#note-window{margin-top: 0px}
  	#note-window,#note-window .screen-center,#note-window .window-center{height: 100%}
+ }
+
+  @media(max-width: 600px){
+  	.screen .screen-center{width: 100%;}
+
+ 	/*main*/
+ 	.frame-main{width: 100%;}
+ 	.frame-side{display: none}
 
  }
