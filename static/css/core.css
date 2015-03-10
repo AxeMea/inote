@@ -6,6 +6,12 @@
 .text-center{text-align: center;}
 .text-right{text-align: right}
 
+/*表单*/
+.form dd{padding: 10px 0px 10px 0px}
+.form textarea{width: 100%}
+.form .form-label{padding:10px 0px;display: inline-block;margin-right: 10px;width: 60px;text-align: right;font-size: 15px}
+.form .input{border: 1px #dddddd solid;padding: 10px}
+
 /*链接*/
 a{text-decoration: none;color: rgb(45, 99, 169)}
 a:hover{color: orange}
@@ -14,8 +20,8 @@ a:hover{color: orange}
 .avatar{width: 50px;height: 50px;}
 
 /*tab*/
-.tab li{display: inline-block;margin: 10px 20px 0px 20px;padding-bottom: 15px;}
-.tab li:hover{border-bottom: 1px orange solid}
+.tab li{display: inline-block;margin:5px 20px 10px 20px;padding-bottom: 15px;background: rgb(235, 236, 234);padding:5px;border-radius: 8px}
+.tab li:hover{}
 
 /*国家颜色*/
 .country-china{color: red}
@@ -70,7 +76,20 @@ body{font-family: 微软雅黑;font-size: 13px;color: #2F2F2F;margin: 0px;}
 .media-logo{height: 25px;}
 
 /*栏目头部*/
-.column-header{padding: 10px;font-size: 25px;clear: both}
+.column-header{padding: 10px 10px 10px 20px;font-size: 25px;clear: both}
+
+
+/*top*/
+header{background: #2F2F2F;color: white;font: 13px;padding: 15px}
+header a{color: white}
+header nav{display: inline-block;}
+header li{display: inline-block;margin-right: 25px;}
+
+#account{position: relative;cursor: pointer;}
+#account .menu:hover{opacity: 0.7}
+#account .wrapper{padding-top:28px;position: absolute;left: -20px;top: 0px;width: 73px;text-align: center;}
+#account .wrapper ul{background: #2F2F2F;display: none;border-bottom-left-radius: 4px;border-bottom-right-radius: 4px;}
+#account .wrapper li{padding: 10px 0px 10px 0px;width: 100%}
 
 /*文章列表*/
 .article-list{}
@@ -93,12 +112,6 @@ body{font-family: 微软雅黑;font-size: 13px;color: #2F2F2F;margin: 0px;}
 #upload-list .op{position: absolute;right: 0px;top: 10px;display: none}
 #upload-list li:hover .op{display: block}
 
-/*top*/
-header{background: #2F2F2F;color: white;font: 13px;padding: 15px}
-header a{color: white}
-header nav{display: inline-block;}
-header li{display: inline-block;margin-right: 10px;}
-header .user-op{}
 
 /*文章主体*/
 .content-wrapper{}
@@ -166,7 +179,8 @@ header .user-op{}
 #userInfo .font-note{line-height: 18px}
 #userInfo .join-time{color: rgb(166, 140, 140);font-size: 14px;}
 
-#my-list{}
+/*修改用户信息-表单*/
+#userInfoWrapper{display: inline-block;margin-top: 10px;}
 
 
  @media(max-width: 400px){

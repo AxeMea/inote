@@ -24,13 +24,42 @@
 
 			<ul class="user-op pull-right">
 				<li>Michael</li>
-				<li>登陆</li>
-				<li>注册</li>
-				<li>退出</li>
+				<li id="account">
+					<span class="menu">账号</span>
+					<div class="wrapper">
+						<ul>
+							<li>
+								<a href="my_edit_info.html">修改信息</a>
+							</li>
+							<li>
+								<a href="my_change_pwd.html">修改密码</a>
+							</li>
+							<li>
+								<a href="javascript:0">退出</a>
+							</li>
+						</ul>
+					</div>
+				</li>
 			</ul>
 		</div>
 	</header>
 	<!-- header end -->
+
+	<!-- menu script start -->
+	<script type="text/javascript">
+	$(function(){
+		$('#account .wrapper').on({
+			click:function(){
+				$(this).find('ul').slideDown();
+			}
+		});
+
+		$('#account .wrapper').on('mouseleave',function(){
+			$(this).find('ul').slideUp();
+		});
+	})
+	</script>
+	<!-- menu script end -->
 
 	<!-- content start -->
 	<div class="content-wrapper">
@@ -53,13 +82,16 @@
 				<section id="my-list">
 					<ul class="tab">
 						<li>
-							<a href="javascript:0">上传的文章</a>
+							<a href="javascript:0">上传</a>
 						</li>
 						<li>
-							<a href="javascript:0">参与的文章</a>
+							<a href="javascript:0">参与</a>
 						</li>
 						<li>
-							<a href="javascript:0">我的笔记</a>
+							<a href="javascript:0">笔记</a>
+						</li>
+						<li>
+							<a href="javascript:0">评论</a>
 						</li>
 					</ul>
 

@@ -1,5 +1,5 @@
 $(function(){
-
+	
 	// iNote
 	iNote = {
 		setting:{
@@ -425,5 +425,15 @@ $(function(){
 	};
 
 	iNote.init();
+
+	// menu
+		$('#account .wrapper').on({
+			click:function(){
+				$(this).find('ul').slideDown();
+			},
+			mouseleave:function(){
+				$(this).find('ul').slideUp();
+			}
+		});
 
 })
