@@ -76,7 +76,7 @@ body{font-family: 微软雅黑;font-size: 13px;color: #2F2F2F;margin: 0px;}
 .media-logo{height: 25px;}
 
 /*栏目头部*/
-.column-header{padding: 10px 10px 10px 20px;font-size: 25px;clear: both}
+.column-header{padding: 10px 10px 10px 0px;font-size: 16px;clear: both}
 
 
 /*top*/
@@ -106,7 +106,7 @@ header li{display: inline-block;margin-right: 25px;}
 
 
 /*我的上传文章*/
-#upload-list li{line-height: 25px;padding: 0px 10px 10px 18px;margin-bottom:10px;border-bottom: 1px #dddddd solid;position: relative;}
+#upload-list li{line-height: 25px;padding: 0px 10px 10px 0px;margin-bottom:10px;border-bottom: 1px #dddddd solid;position: relative;}
 #upload-list li .title{font-size: 15px;}
 #upload-list span,#upload-list .op a{margin-right: 10px;}
 #upload-list .op{position: absolute;right: 0px;top: 10px;display: none}
@@ -178,6 +178,16 @@ header li{display: inline-block;margin-right: 25px;}
 #userInfo .sex-female{color: orange;font-size: 18px;}
 #userInfo .font-note{line-height: 18px}
 #userInfo .join-time{color: rgb(166, 140, 140);font-size: 14px;}
+
+
+/*用户菜单*/
+#userFrame{float: left;margin-top: 15px;}
+#userFrame .user-menu{float: left;width: 110px;text-align: left;padding-top: 8px;margin-right: 20px;}
+#userFrame .user-menu dt,#userFrame .user-menu dd{padding: 10px 10px 10px 27px;border-right: 2px #dddddd solid}
+#userFrame .user-menu dt{font-weight: bold}
+#userFrame .user-menu  dd.active{border: 2px #dddddd solid;border-style:solid none solid solid;}
+#userFrame .user-menu  dd.active a{color: orange}
+#userFrame .user-body{float: left;width: 560px;}
 
 /*修改用户信息-表单*/
 #userInfoWrapper{display: inline-block;margin-top: 10px;}
