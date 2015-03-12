@@ -46,6 +46,8 @@
 	</header>
 	<!-- header end -->
 
+	
+
 	<!-- content start -->
 	<div class="content-wrapper">
 		<div class="screen-center">
@@ -67,36 +69,35 @@
 					<nav class="user-menu">
 						<dl>
 							<dt>
-								我的评论
+								内容管理
 							</dt>
 							<dd><a href="#">上传的文章</a></dd>
 							<dd><a href="#">看过的文章</a></dd>
-							<dd><a href="#">我的笔记</a></dd>
+							<dd class="active"><a href="#">我的笔记</a></dd>
 							<dd><a href="#">我的评论</a></dd>
 							<dt>
 								个人信息
 							</dt>
-							<dd><a href="#" >修改资料</a></dd>
-							<dd class="active"><a href="#">修改密码</a></dd>
+							<dd><a href="#">修改资料</a></dd>
+							<dd><a href="#">修改密码</a></dd>
 						</dl>
 					</nav>
 					<div class="user-body">
-						<h3 class="column-header">修改密码</h3>
-						<section>
-							<dl class="form">
-								<dd>
-									<label class="form-label">原密码：</label>
-									<input class="input" type="password" />
-								</dd>
-								<dd>
-									<label class="form-label">新密码：</label>
-									<input class="input" type="password" />
-									</dd>
-								<dd>
-									<button class="btn btn-save">保存</button>
-								</dd>
-							</dl>
-						</section>
+						<h3 class="column-header">我的笔记</h3>
+				<section id="my-list">
+					<div class="upload-list">
+						<ul  id="upload-list">
+							<li>
+								<p class="note">
+									说多了费聚少离多积分粮食店街发牢骚的减肥了圣诞节分离开三等讲
+								</p>
+								<p class="font-note"><span>来自:<a>追风筝的人</a></span><span>浏览次数(4444)</span><span>参与人数(21)</span> <span>笔记数(2234)</span></p>
+								<span class="op"><a href='javascript:0'>删除</a><a href='javascript:0'>私有</a><a href='javascript:0'>分享</a></span>
+							</li>
+						</ul>
+						<div class="holder"></div>
+					</div>
+				</section>
 					</div>
 				</div>
 
@@ -112,6 +113,20 @@
 		</div>
 	</div>
 	<!-- content end -->
+
+
+<script type="text/javascript">
+	$(function(){
+
+	  $("div.holder").jPages({
+	    containerID : "upload-list",
+	    perPage :10,
+	    previous:'上一页',
+	    next:'下一页'
+	  });
+
+	});
+</script>
 
 </body>
 </html>

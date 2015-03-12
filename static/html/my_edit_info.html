@@ -1,12 +1,14 @@
 <!doctype html>
 <head>
-	<title>修改信息 - 云记</title>
+	<title>我的 - 云记</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="../css/reset.css">
 	<link rel="stylesheet" type="text/css" href="../css/core.css">
-	<script type="text/javascript" src="../script/jquery-1.9.1.min.js"></script>
+	<link rel="stylesheet" href="../css/jPages.css">
+	<script src="../script/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="../script/core.js"></script>
+	<script type="text/javascript" src="../script/jPages.js"></script>
 </head>
 <body class="day screen">
 	
@@ -47,40 +49,95 @@
 	<!-- content start -->
 	<div class="content-wrapper">
 		<div class="screen-center">
-			<div class="column-header">
-				修改个人信息
+			<div class="frame-main">
+				<section id="userInfo">
+					<aside>
+						<img class="avatar" src="../images/source.jpg">
+					</aside>
+					<div class="user-detail">
+						<ul>
+							<li><span class="country country-china">[中]</span><span class="name">Michael</span>/<span class="sex-male">雄性</span>/<span class="join-time">2014-12-21</span>加入</li>
+							<li class="font-note">我他么真他么帅我他么真他么帅我他么真他么帅我他么真他么帅我他么真他么帅我他么真他么帅我他么真他么帅我他么真他么帅我他么真他么帅我他么真他么帅我他么真他么帅</li>
+							<li>贡献值：133&nbsp;&nbsp;&nbsp;上传文章数：52篇 &nbsp;&nbsp;&nbsp;参与文章数：52篇 &nbsp;&nbsp;&nbsp;笔记数：52条 </li>
+						</ul>
+					</div>
+				</section>
+
+				<div id="userFrame">
+					<nav class="user-menu">
+						<dl>
+							<dt>
+								我的评论
+							</dt>
+							<dd><a href="#">上传的文章</a></dd>
+							<dd><a href="#">看过的文章</a></dd>
+							<dd><a href="#">我的笔记</a></dd>
+							<dd><a href="#">我的评论</a></dd>
+							<dt>
+								个人信息
+							</dt>
+							<dd  class="active"><a href="#" >修改资料</a></dd>
+							<dd><a href="#">修改密码</a></dd>
+						</dl>
+					</nav>
+					<div class="user-body">
+						<h3 class="column-header">修改个人信息</h3>
+						<section id="editUserBox">
+							<dl class="form">
+								<dd>
+									<label class="form-label">邮箱：</label>
+									<input class="input" type="text" />
+								</dd>
+								<dd>
+									<label class="form-label">姓：</label>
+									<input class="input" type="text" />
+									</dd>
+								<dd>
+									<label class="form-label">名：</label>
+									<input class="input" type="text" />
+								</dd>
+								<dd>
+									<label class="form-label">性别：</label>
+									<select class="input">
+										<option>男</option>
+										<option>女</option>
+									</select>
+								</dd>
+								<dd>
+									<label class="form-label">国籍：</label>
+									<select class="input">
+										<option>中国</option>
+										<option>美国</option>
+									</select>
+								</dd>
+								<dd>
+									<label class="form-label">签名：</label>
+									<textarea class="input" rows="10"></textarea>
+								</dd>
+								<dd><button class="btn btn-save">保存</button></dd>
+							</dl>
+							<aside id="avatarBox">
+								<div id="picture">
+									<img  src="../images/source.jpg">
+								</div>
+								<a href="#">上传</a>
+								<a href="#">取消</a>
+							</aside>
+						</section>
+					</div>
+				</div>
+
+				
+				</div>
 			</div>
-			<div id="userInfoWrapper">
-				<dl class="form">
-					<dd>
-						<label class="form-label">邮箱：</label><input type="text" class="input"/>
-					</dd>
-					<dd>
-						<label class="form-label">姓：</label><input type="text" class="input"/>
-					</dd>
-					<dd>
-						<label class="form-label">名：</label><input type="text" class="input"/>
-					</dd>
-					</dd>
-					<dd>
-						<label class="form-label">性别：</label>
-						<select>
-							<option value="male">雄性</option>
-							<option value="female">雌性</option>
-						</select>
-					</dd>
-					<dt>
-						<label class="form-label">签名：</label>
-					</dt>
-					<dd>
-						<textarea class="input" rows="6"></textarea>
-					</dd>
-				</dl>
-			</div>
+
+			<aside class="frame-side">
+					<h3 class="column-header">最新文章</h3>
+					<h3 class="column-header">热门标签</h3>
+			</aside>
+			
 		</div>
 	</div>
 	<!-- content end -->
-
-
 </body>
 </html>

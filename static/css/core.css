@@ -6,11 +6,19 @@
 .text-center{text-align: center;}
 .text-right{text-align: right}
 
+.clear-fix{clear: both;}
+
 /*表单*/
-.form dd{padding: 10px 0px 10px 0px}
+.form dd{padding: 12px 0px 0px 0px}
 .form textarea{width: 100%}
 .form .form-label{padding:10px 0px;display: inline-block;margin-right: 10px;width: 60px;text-align: right;font-size: 15px}
-.form .input{border: 1px #dddddd solid;padding: 10px}
+.form .input{border: 1px #dddddd solid;padding: 5px 0px 5px 0px;width: 170px}
+.form select.input{width: 172px;}
+.form textarea.input{width: 400px;}
+
+/*摘要*/
+.summary{background: #efefef;}
+.note{background: #F0EED6;padding: 20px;line-height: 25px}
 
 /*链接*/
 a{text-decoration: none;color: rgb(45, 99, 169)}
@@ -111,7 +119,17 @@ header li{display: inline-block;margin-right: 25px;}
 #upload-list span,#upload-list .op a{margin-right: 10px;}
 #upload-list .op{position: absolute;right: 0px;top: 10px;display: none}
 #upload-list li:hover .op{display: block}
+#upload-list .note{background: #efefef;padding: 10px;}
 
+/*修改个人信息*/
+#editUserBox{position: relative;}
+#avatarBox{padding:5px;text-align: center;position: absolute;right: 100px;top: 0px;width: 130px;height: 165px;border: 1px #dddddd solid}
+
+#picture{height: 144px;margin-bottom:6px;background:#dddddd;}
+#picture img{width: 100%;height: 100%}
+
+/*笔记详情页*/
+#detailNoteSumary{padding: 20px;}
 
 /*文章主体*/
 .content-wrapper{}
@@ -119,6 +137,13 @@ header li{display: inline-block;margin-right: 25px;}
 .content-wrapper article .title{font-size: 50px;font-weight: 700;margin:0px 0px 25px 0px;}
 .content-wrapper .content{font-size: 17px;color: #2f2f2f;font-weight:100;text-indent: 35px;}
  
+ /*笔记评论*/
+#noteComments li{border-bottom: 1px #dddddd solid;padding: 10px 0px 10px 0px}
+#noteComments aside{float: left;width: 50px;text-align: center;}
+#noteComments aside img{margin-bottom: 5px;}
+#noteComments .content{float: left;width: 600px;padding: 10px 20px 0px 20px;font-size: 14px;}
+#noteComments .content .text{margin-bottom: 10px;}
+
 
  /*工具栏*/
 .tool-bar{position: fixed;bottom: 0px;left: 0px;padding: 10px 0px 10px 0px;background: rgba(0,0,0,0.7);width: 100%;text-align: center;color: white}

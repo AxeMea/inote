@@ -1,0 +1,171 @@
+<!doctype html>
+<head>
+	<title>我的 - 云记</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/core.css">
+	<link rel="stylesheet" href="../css/jPages.css">
+	<script src="../script/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="../script/core.js"></script>
+	<script type="text/javascript" src="../script/jPages.js"></script>
+</head>
+<body class="day screen">
+	
+	<!-- header start -->
+	<header>
+		<div class="header-center screen-center">
+			<nav>
+				<ul>
+					<li><a href="index.html">首页</a></li>
+					<li><a href="categorys.html">书库</a></li>
+					<li><a href="my_articles.html">我的</a></li>
+				</ul>
+			</nav>
+
+			<ul class="user-op pull-right">
+				<li>Michael</li>
+				<li id="account">
+					<span class="menu">账号</span>
+					<div class="wrapper">
+						<ul>
+							<li>
+								<a href="my_edit_info.html">修改信息</a>
+							</li>
+							<li>
+								<a href="my_change_pwd.html">修改密码</a>
+							</li>
+							<li>
+								<a href="javascript:0">退出</a>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</header>
+	<!-- header end -->
+
+	<!-- content start -->
+	<div class="content-wrapper">
+		<div class="screen-center">
+			<div class="frame-main">
+				<h3 class="column-header">
+					摘要
+				</h3>
+				<div id="detailNoteSumary" class="summary">
+					双方均零售价发牢骚的减肥了三等讲发牢骚的减肥了三等讲付款了丰盛的零售价发牢骚的减肥了三等讲发牢骚的减肥了三等讲疯狂了说地精的风口浪尖
+				</div>
+
+				<h3 class="column-header">
+					笔记
+				</h3>
+				<article class="note" style="margin-top:0px;">
+					山东龙口飞机昆仑山的解放路快圣诞节疯狂了圣诞节分离开桑德菲杰老师肯定解放路卡桑德菲杰了扩散到积分流口水的减肥了款圣诞节分离开输的几率咖啡机sd卡浪费军绿色杜绝浪费技术的浪费时间杜郎口福建省卡两地分居楼上的积分了圣诞节分离开三等讲老师的将老师肯定放假了款圣诞节分离开说地精
+				</article>
+
+				<h3 class="column-header">
+					评论
+				</h3>
+				<section>
+					<ul  id="noteComments">
+						<li>
+							<aside>
+								<img class="avatar" src="../images/source.jpg"><br/>梅超风
+							</aside>
+							<div class="content">
+								<div class="text">
+									hello
+								</div>
+								<div class="font-note text-left">
+									1秒前
+								</div>
+							</div>
+							<div class="clear-fix"></div>
+						</li>
+						<li>
+							<aside>
+								<img class="avatar" src="../images/source.jpg"><br/>梅超风
+							</aside>
+							<div class="content">
+								<div class="text">
+									hello
+								</div>
+								<div class="font-note text-left">
+									1秒前
+								</div>
+							</div>
+							<div class="clear-fix"></div>
+						</li>
+						<li>
+							<aside>
+								<img class="avatar" src="../images/source.jpg"><br/>梅超风
+							</aside>
+							<div class="content">
+								<div class="text">
+									hello
+								</div>
+								<div class="font-note text-left">
+									1秒前
+								</div>
+							</div>
+							<div class="clear-fix"></div>
+						</li>
+						<li>
+							<aside>
+								<img class="avatar" src="../images/source.jpg"><br/>梅超风
+							</aside>
+							<div class="content">
+								<div class="text">
+									hello
+								</div>
+								<div class="font-note text-left">
+									1秒前
+								</div>
+							</div>
+							<div class="clear-fix"></div>
+						</li>
+						<li>
+							<aside>
+								<img class="avatar" src="../images/source.jpg"><br/>梅超风
+							</aside>
+							<div class="content">
+								<div class="text">
+									hello
+								</div>
+								<div class="font-note text-left">
+									1秒前
+								</div>
+							</div>
+							<div class="clear-fix"></div>
+						</li>
+					</ul>
+					<div class="holder"></div>
+				</section>
+
+				
+				</div>
+			</div>
+
+			<aside class="frame-side">
+					<h3 class="column-header">最新文章</h3>
+					<h3 class="column-header">热门标签</h3>
+			</aside>
+			
+		</div>
+	</div>
+	<!-- content end -->
+	<script type="text/javascript">
+		$(function(){
+
+			  $("div.holder").jPages({
+			    containerID : "noteComments",
+			    perPage :2,
+			    previous:'上一页',
+			    next:'下一页'
+			  });
+
+	});
+	</script>
+</body>
+</html>
